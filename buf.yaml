@@ -1,0 +1,14 @@
+version: v1beta1
+build:
+  roots:
+    - proto
+lint:
+  use:
+    - DEFAULT
+    - COMMENTS
+  rpc_allow_google_protobuf_empty_requests: true
+  rpc_allow_google_protobuf_empty_responses: true
+breaking:
+  ignore_unstable_packages: true
+  use:
+    - FILE

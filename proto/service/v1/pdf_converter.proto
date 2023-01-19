@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package service.v1;
+
+option go_package = "github.com/unitedcollab/vezu_pdf_preview/build/service/v1;v1";
+
+service PDFConverterService {
+  rpc ConvertPDFToJPG(ConvertPDFToJPGRequest) returns (ConvertPDFToJPGResponse);
+}
+
+message ConvertPDFToJPGRequest {
+  bytes pdf_file_content = 1;
+  int32 width = 2;
+  int32 height = 3;
+}
+
+message ConvertPDFToJPGResponse {
+  bytes jpg_file_content = 1;
+}
